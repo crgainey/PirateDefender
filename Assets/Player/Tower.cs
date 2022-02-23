@@ -5,8 +5,7 @@ using UnityEngine;
 public class Tower : MonoBehaviour
 {
     [SerializeField] int cost = 75;
-
-
+   
     //bool so if there is not enough money will return flse
     public bool CreateTower(Tower tower, Vector3 position)
     {

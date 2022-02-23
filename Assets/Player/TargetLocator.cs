@@ -12,8 +12,6 @@ public class TargetLocator : MonoBehaviour
     
     void Update()
     {
-        // for small game its okay if larger safe guard and only have it find target under certain conitions
-        //  if enemy dies or out of range
         FindClosestTarget(); 
         AimWeapon();
     }

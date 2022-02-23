@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using TMPro;
 
 public class Bank : MonoBehaviour
 {
     [SerializeField] int startingBalance = 150;
+    [SerializeField] GameManager gameManger;
     
     int currentBalance;
     public int CurrentBalance { get { return currentBalance; } } // aceesss but cant set
@@ -15,6 +15,7 @@ public class Bank : MonoBehaviour
 
     void Awake()
     {
+
         currentBalance = startingBalance;
         UpdateDisplay();
     }
@@ -33,7 +34,7 @@ public class Bank : MonoBehaviour
 
         if (currentBalance < 0)
         {
-            ReloadScene();
+            gameManger.LoseMenu();
         }
     }
 
@@ -42,10 +43,6 @@ public class Bank : MonoBehaviour
         displayBalance.text = "Gold: " + currentBalance;
     }
 
-    void ReloadScene()
-    {
-        Scene currentScene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(currentScene.buildIndex);
-    }
+    
 
 }
